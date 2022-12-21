@@ -1,0 +1,172 @@
+
+@import 'mixings';
+*
+{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+   
+}
+body
+{
+
+      background-color: #9A1663;
+      text-align:center; 
+      font-family: Marvel
+}
+.container
+{      
+      width: 80%;
+      margin: 
+      {
+            left: auto;
+            right: auto;
+      };
+      form
+      {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: 500;
+            color:#FF5858;
+            input
+            {
+                  background-color: #FF97C1;
+                  width: 300px;
+                  height: 30px;
+                  border-radius: 10px;
+                  margin-top: 30px;
+                  font-family: Marvel
+                  
+            }
+      }
+      button
+      {
+          background-color:  #FF5858;
+          border-radius: 20px;
+          font-size: larger;
+          font-weight: 700;
+          padding: 10px;
+          margin-top: 30px;
+          color: #E0144C;
+          font-family: Marvel
+      }
+}
+nav
+{
+ul{
+      display: flex;
+      justify-content: space-between;
+            
+           
+
+      li
+      {
+            a{
+
+                  margin-top: 25px;
+                  text-decoration: none;
+                  color:#FF97C1;
+                  font-size: 50px;
+                  font-weight: 200;
+             }
+      }
+      button
+             {
+                  border-radius: 20px;
+                  box-shadow: 20px;
+                  width: 20%;
+                  border-color:#FF5858 ;
+                  background-color: #FF5858;
+                  font-size: 20px;
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  margin-top: 15px;
+             }
+
+            list-style: none;
+     
+}
+
+}
+.blink_me {
+      animation: blinker 3s linear infinite;
+    }
+
+@keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+    
+ @include for-tablet
+ {
+     
+      nav
+      {
+            font-size: medium;
+            margin-right: 20px;
+             ul{
+                  li{
+                        a
+                        {
+                              margin-top: 20px;
+                        }
+                  }
+             }
+
+      }
+ }   
+    @include for-phone-only
+{
+  
+      body
+      {
+            nav{
+                  ul{
+                        display: block;
+                        font-size: smaller;
+                        button
+                        {
+                              
+                              border-radius: 60px;
+                              width: 200px;
+                              height: 100px;
+                              box-shadow: #FF5858 ;
+                              border-width: 2px;
+                              border-color:#E0144C;
+                              margin: 30px;
+
+                        }
+                  }
+                  }
+      background-color:#FF5858;
+      text-align:center; 
+      font-family: Arial, Helvetica, sans-serif;
+      }
+}
+@include for-tablet
+{     
+      body
+      {
+            nav{
+                  ul{
+                        display: block;
+                        font-size: smaller;
+                        button
+                        {
+                              border-radius: 60px;
+                              width: 200px;
+                              height: 100px;
+                              box-shadow: #FF5858 ;
+                              border-width: 2px;
+                              border-color:#E0144C;
+                              margin: 30px;
+                        }
+                  }
+                  }
+      background-color:#FF5858;
+      text-align:center; 
+      font-family: Arial, Helvetica, sans-serif;
+      }
+}
+

@@ -16,6 +16,44 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.container .togglepart {
+  text-align: center;
+  height: 400px;
+  background-color: white;
+  border-radius: 30px;
+  margin-left: 10%;
+  -webkit-box-shadow: 5px 10px #E0144C;
+          box-shadow: 5px 10px #E0144C;
+  padding: 5%;
+}
+.container .togglepart #btnsub {
+  margin-top: 2px;
+}
+.container .togglepart #thequizz {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 40px;
+  margin: 2%;
+}
+.container .togglepart #thequizz .question {
+  font-size: 35px;
+}
+.container .togglepart #thequizz .question .justquestions .ques {
+  width: 20px;
+  height: 20px;
+}
+.container .togglepart #result .answer {
+  border-color: black;
+  margin-left: 10%;
+  border-radius: 20px;
+  background-color: #ff7096;
+  width: 80%;
+  font-size: 24px;
+}
 .container form {
   font-size: 40px;
   text-transform: uppercase;
@@ -128,7 +166,7 @@ nav ul button {
   }
   body nav ul button {
     border-radius: 60px;
-    width: 200px;
+    width: 600px;
     height: 100px;
     -webkit-box-shadow: #FF5858;
             box-shadow: #FF5858;
@@ -136,4 +174,63 @@ nav ul button {
     border-color: #E0144C;
     margin: 30px;
   }
+}
+.step-compo {
+  margin: 0%;
+  padding: 0%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  list-style: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 40px;
+}
+.step-compo div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.step-compo div div {
+  background-color: white;
+  height: 2px;
+  width: 30rem;
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
+}
+.step-compo .title-compo {
+  background-color: aliceblue;
+  border-radius: 50%;
+  --size: 3rem;
+  width: var(--size);
+  height: var(--size);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  text-align: center;
+}
+.step-compo item-compo {
+  --size: 3rem;
+  content: "*";
+  position: relative;
+  z-index: 1;
+  display: block;
+  border-radius: 50%;
+  margin: 1rem auto 0;
+  background-color: antiquewhite;
+}
+
+.spacediv2 {
+  background-color: aliceblue;
 }

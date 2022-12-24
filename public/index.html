@@ -16,7 +16,7 @@
             <li><a href="">🍀 Quizziz</a></li>
             <button onclick ="reload()">test yourself now </button>
             <button onclick ="turn1()">get your score</button>
-            <button id ="btn-test" onclick="load">data button</button>
+            <button onclick ="sho()" >data button</button>
       </ul>
       </nav>
 
@@ -68,9 +68,9 @@
 
 
 
-      <div class="togglepart">
+      <div id="displayQA" class="togglepart">
             <section id="quest">
-                  <h2 class="" >Which AWS service would simplify the migration of a database to AWS? </h2>
+                  <h2  id = "questiontitle"  >Which AWS service would simplify the migration of a database to AWS? </h2>
              </section>
         
       <section id="thequizz">
@@ -78,17 +78,17 @@
             </div>
             <div class = "question">
             <div class="justquestions">
-            <input type="checkbox" id="cb1" class="ques" />
-            <label for="cb1">AWS Storage Gateway</label>
+            <input  type="checkbox" id="cb11" class="ques" />
+            <label id="cb1" for="cb1">AWS Storage Gateway</label>
             <br/>
-            <input type="checkbox" id="cb2" class="ques" />
-            <label for="cb2">AWS Database Migration Service (AWS DMS)</label>
+            <input type="checkbox" id="cb21" class="ques" />
+            <label id="cb2"  for="cb2">AWS Database Migration Service (AWS DMS)</label>
             <br/>
-            <input type="checkbox" id="cb3" class="ques" />
-            <label for="cb2">Amazon EC2</label>
+            <input type="checkbox" id="cb31" class="ques" />
+            <label id="cb3" for="cb2">Amazon EC2</label>
             <br/>
-            <input type="checkbox" id="cb4" class="ques" />
-            <label for="cb2">Amazon AppStream 2.0</label>
+            <input type="checkbox" id="cb41" class="ques" />
+            <label id="cb4" for="cb2">Amazon AppStream 2.0</label>
             <br/>
             </div>
             </div>
@@ -98,11 +98,12 @@
       <section id="result">
            <h4 class="answer" >AWS Database Migration Service (AWS DMS)</h4>
       </section>
-      <button id="btnsub">submit the answer ></button>
+      <button onclick="passTheNextquestion()" id="btnsub">submit the answer ></button>
       </div>
 
 
 </div>
 <script type="text/javascript" src="../src/app.js"></script>
+<script src="https://randojs.com/1.0.0.js"></script>
 </body>
 </html>

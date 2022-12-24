@@ -112,32 +112,72 @@ var questions =  [
     ]
 
 
-
-
-
-
-
-// import question from '../public/question.json' assert { type: 'JSON'};
-
 const step= document.querySelector('.title-compo');
-// const line = document.querySelector('.spacediv1');
+
 const step2= document.getElementById('spacediv2');
 let  button = document.getElementById('btn');
 let buttondata = document.getElementById('btn-test');
+let questiontitle = document.getElementById('questiontitle');
+var part = document.getElementById('displayQA').style.display ="none"; 
+answerquestion1= document.getElementById('cb1');
+answerquestion2 = document.getElementById('cb2');
+answerquestion3 = document.getElementById('cb3');
+answerquestion4 = document.getElementById('cb4');
+valuecheck1 = document.getElementById('cb11');
+valuecheck2 = document.getElementById('cb21')
+valuecheck3 = document.getElementById('cb31');
+valuecheck4 = document.getElementById('cb41');
 
-// const url = '../public/question.json';
-
-// const message = pageelem(main,'div','just begin the game','message');
 function reload()
 {
       window.location.reload();
 }
 
+function arraygenratore()
+{
+  randArr =[];
+  while(randArr.length < 10){
+    val = Math.floor((Math.random() * 10));
+  
+    if(randArr.indexOf(val) < 0){
+      randArr.push(val);
+    }
+  }
+  return randArr;
+}
+var random = arraygenratore();
+
+function* generator() {
+  let toYield = random;
+  for (let i=0; i<toYield.length-1; i++) yield toYield[i];
+  return toYield.pop(); 
+}
+var ran = generator();
+function passTheNextquestion()
+{
+  let rna1 = ran.next();
+  if(rna1.length == 11)
+  {
+     alert('this is the finale question')
+  }
+ 
+  questiontitle.textContent = questions[rna1.value].question;
+  answerquestion1.textContent = questions[rna1.value].answers[0]
+  answerquestion2.textContent =questions[rna1.value].answers[1]
+  answerquestion3.textContent =questions[rna1.value].answers[2]
+  answerquestion4.textContent =questions[rna1.value].answers[3]
+  valuecheck1.value =  questions[rna1.value].answers[0]
+  valuecheck2.value =  questions[rna1.value].answers[1]
+  valuecheck3.value =  questions[rna1.value].answers[2]
+  valuecheck4.value =  questions[rna1.value].answers[3]
+
+  console.log(rna1.value);
+}
+console.log(questions[1].answers[1])
 function turn1(){
 
 if(document.getElementById('username').value)
 {
-
 
 step.style.backgroundColor ='green',
 document.getElementById('title').textContent = "Welcome" + "  " + document.getElementById('username').value;
@@ -145,32 +185,22 @@ document.getElementById('username').style.display = "none";
 document.getElementById('username').value = "";
 document.getElementById('btn').innerHTML = " proceed to the next step"
 document.getElementById('svgdis').style.display = "none";
+document.getElementById('displayQA').style.display ="block"; 
+
 }else if(step.style.backgroundColor =='green')
 {
       step2.style.backgroundColor = 'green';
       document.getElementById('btn').style.display = "none";
-    
-
-
 }
 else if( document.getElementById('btn').style.display == "none" && step2.style.backgroundColor == 'green')
 {
       alert('happy to see you ')
       document.getElementById('spacediv3').style.backgroundColor = 'green'
       console.log(document.getElementById('spacediv3'));
-
 }else{
       alert('insert you name please');
-    
-    
       }
 }
-
-
-
-
-
-
 
 
 

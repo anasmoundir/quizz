@@ -16,7 +16,6 @@
             <li><a href="">🍀 Quizziz</a></li>
             <button onclick ="reload()">test yourself now </button>
             <button onclick ="turn1()">get your score</button>
-            <button onclick ="sho()" >data button</button>
       </ul>
       </nav>
 
@@ -79,26 +78,45 @@
             <div class = "question">
             <div class="justquestions">
             <input  type="checkbox" id="cb11" class="ques" />
-            <label id="cb1" for="cb1">AWS Storage Gateway</label>
+            <label id="cb1"></label>
             <br/>
-            <input type="checkbox" id="cb21" class="ques" />
-            <label id="cb2"  for="cb2">AWS Database Migration Service (AWS DMS)</label>
+            <input type="checkbox" id="cb21" class="ques"  />
+            <label id="cb2"></label>
             <br/>
             <input type="checkbox" id="cb31" class="ques" />
-            <label id="cb3" for="cb2">Amazon EC2</label>
+            <label id="cb3" ></label>
             <br/>
             <input type="checkbox" id="cb41" class="ques" />
-            <label id="cb4" for="cb2">Amazon AppStream 2.0</label>
+            <label id="cb4"></label>
             <br/>
             </div>
             </div>
             <div class="responses"></div>
       </section>
+      
 
       <section id="result">
            <h4 class="answer" >AWS Database Migration Service (AWS DMS)</h4>
       </section>
-      <button onclick="passTheNextquestion()" id="btnsub">submit the answer ></button>
+      <button onclick="submit()" id="btnsub">submit</button>
+      <button onclick="passTheNextquestion()" id="btnsub">next></button>
+      </div>
+
+      <div id="displayQA2" class="togglepart">
+            <h3>This quiz is for educational and informational purposes only. It is not intended to be a substitute for professional advice or training.
+                  The quiz is based on the AWS services and features that were available as of the knowledge cutoff date. Some of the information may be out of date.
+                  The quiz is provided "as is" without any warranties or guarantees of any kind. We do not assume any responsibility for any errors or omissions.
+                  By accessing and using the quiz, you agree to the terms of use. If you do not agree to these terms, please do not use the quiz.
+                  You may not use the quiz for any illegal or unauthorized purpose.
+                  We reserve the right to change or update the quiz and these terms of use at any time without notice. It is your responsibility to check for updates.
+                  You may not copy, distribute, or share the quiz or any of its content without our written permission.
+                  The quiz is protected by intellectual property laws, including copyright and trademark laws.
+                  We are not responsible for any third-party content or links that may be included in the quiz.
+                  These terms of use shall be governed by and construed in accordance with the laws of the State of California, USA. Any disputes arising out of or in connection with these terms of use shall be resolved by the courts of the State of California.</h3>
+      </div>
+
+      <div id="displayQA3" class="togglepart">
+            <h1  id="result"> </h1>
       </div>
 
 

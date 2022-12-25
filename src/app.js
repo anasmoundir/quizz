@@ -152,7 +152,8 @@ function* generator() {
 
 var ran = generator();
 var rna1;
-var compare;
+var compare ;
+var position = 0;
 var correctquestion = 0;
 var arr = [];
 function passTheNextquestion()
@@ -177,12 +178,18 @@ function passTheNextquestion()
   valuecheck3.value = questions[rna1.value].answers[2];
   valuecheck4.value = questions[rna1.value].answers[3];
   var compare = thevalueofcheckedboxs();
-return questions[rna1.value -1].correctAnswer;
+  position = rna1.value;
+return position;
+// return questions[ran[rna1.value]-1].correctAnswer;
 }
+console.log(ran);
 
 function submit()
 { 
   console.log(thevalueofcheckedboxs());
+  console.log(passTheNextquestion());
+  let lol = passTheNextquestion();
+  console.log(questions[lol -1].correctAnswer)
 }
 
 

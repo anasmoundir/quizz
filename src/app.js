@@ -149,21 +149,20 @@ function* generator() {
   for (let i=0; i<toYield.length-1; i++) yield toYield[i];
   return toYield.pop(); 
 }
-
 var ran = generator();
 var rna1;
 var compare ;
 var position = 0;
 var correctquestion = 0;
 var arr = [];
+var arr2 = [];
 function passTheNextquestion()
 {
   initilizethe();
   let rna1 = ran.next();
-  StepForward(rna1);
   if(rna1.done)
   {
-    document.getElementById('displayQA').style.display ="none"; 
+     document.getElementById('displayQA').style.display ="none"; 
     document.getElementById('spacediv3').style.backgroundColor = 'green'
     document.getElementById('displayQA3').style.display = "block"
     var resultat = document.getElementById('result').innerHTML ="YOUR CORRECT ANSWERS ARE"+ " " +correctquestion +"/10";
@@ -177,25 +176,29 @@ function passTheNextquestion()
   valuecheck2.value = questions[rna1.value].answers[1];
   valuecheck3.value = questions[rna1.value].answers[2];
   valuecheck4.value = questions[rna1.value].answers[3];
-  var compare = thevalueofcheckedboxs();
+  let p = thevalueofcheckedboxs();
+  arr.push(p)
+  arr2.push(questions[rna1.value].correctAnswer);
   position = rna1.value;
-return position;
-// return questions[ran[rna1.value]-1].correctAnswer;
+  console.log(arr)
+  console.log(arr2)
 }
-console.log(ran);
+ var counter = 0;
 
-function submit()
-{ 
-  console.log(thevalueofcheckedboxs());
-  console.log(passTheNextquestion());
-  let lol = passTheNextquestion();
-  console.log(questions[lol -1].correctAnswer)
-}
-
-
-
-
-
+  function getresult()
+  {
+      let i = 0;
+    while(i<arr.length)
+    {
+      if(arr[i] == arr2[i])
+      {
+        counter += 1;
+      }
+      i++;
+    }
+    console.log(counter)
+    console.log(arr)
+  }
 
 
 var myvalue;
@@ -203,11 +206,8 @@ function thevalueofcheckedboxs()
 {
   let checkboxes = [valuecheck1, valuecheck2, valuecheck3, valuecheck4]
   checkboxes.forEach(box=>{box.onclick = e =>  myvalue= e.target.value})
-  console.log(myvalue)
  return myvalue
 }
-
-
 
 
 function initilizethe()
@@ -218,7 +218,7 @@ function initilizethe()
   valuecheck4.checked = false;
 }
 
-function StepForward(lol )
+function StepForward(lol)
 {
   questiontitle.textContent = questions[lol.value].question;
   answerquestion1.textContent = questions[lol.value].answers[0]
@@ -231,6 +231,7 @@ function StepForward(lol )
 
 
 function turn1(){
+
 if(document.getElementById('username').value)
 {
 step.style.backgroundColor ='green',
@@ -242,7 +243,7 @@ document.getElementById('svgdis').style.display = "none";
 document.getElementById('displayQA2').style.display = "block"
 }else if(step.style.backgroundColor =='green')
 {
-      passTheNextquestion();
+
       step2.style.backgroundColor = 'green';
       document.getElementById('btn').style.display = "none";
       document.getElementById('displayQA2').style.display = "none"
@@ -257,7 +258,7 @@ else if( document.getElementById('btn').style.display == "none" && step2.style.b
       alert('insert you name please');
       }
 }
-
+function start(){}
 
 
 

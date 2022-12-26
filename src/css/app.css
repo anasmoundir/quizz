@@ -27,7 +27,6 @@ body {
 }
 .container .togglepart {
   text-align: center;
-  height: 400px;
   background-color: white;
   border-radius: 30px;
   margin-left: 10%;
@@ -35,10 +34,14 @@ body {
           box-shadow: 5px 10px #E0144C;
   padding: 5%;
 }
+.container .togglepart #quest #questiontitle {
+  font-size: 40px;
+}
+.container .togglepart #quest #thequizz .question .justquestions {
+  font-weight: 400;
+  background-color: red;
+}
 .container .togglepart #thequizz {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -49,11 +52,29 @@ body {
   font-size: 35px;
 }
 .container .togglepart #thequizz .question .justquestions {
-  justify-items: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 0;
 }
-.container .togglepart #thequizz .question .justquestions .ques {
-  width: 20px;
-  height: 20px;
+.container .togglepart #thequizz .question .justquestions div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.container .togglepart #thequizz .question .justquestions div label {
+  display: block;
+  text-align: left;
+}
+.container .togglepart #thequizz .question .justquestions div input {
+  display: block;
 }
 .container .togglepart #result progress {
   width: 50%;
@@ -155,14 +176,36 @@ nav ul button {
 }
 @media (max-width: 599px) {
   body {
+    margin-top: 10px;
     text-align: center;
     overflow: auto;
-    background-color: #FF5858;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
   }
   body .container {
     text-align: center;
+    text-align: center;
+  }
+  body .container #displayQA2 {
+    font-size: small;
+    margin-top: 20px;
+    white-space: pre-wrap;
+    text-align: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-right: 50px;
+    font-size: 15px;
+    height: 300px;
+    width: 250px;
+  }
+  body .container #displayQA {
+    margin-top: 20px;
+    height: 600px;
+  }
+  body .container #displayQA #thequizz .question .justquestions .ques {
+    font-size: 20px;
+  }
+  body .container #displayQA #thequizz .question .justquestions .ques1 {
+    font-size: 25px;
   }
   body .container #divform {
     color: black;

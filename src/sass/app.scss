@@ -15,13 +15,29 @@ body
       font-family: Marvel
 }
 .container
-{      
+{    
+      
+      
+
+      #btn-test
+      {   
+            &:hover
+            {
+             transition: 1s;
+             box-shadow: 10px 10px 0 #efbb2a;
+            }
+      }
       width: 80%;
       margin: 
       {
             left: auto;
             right: auto;
       };
+      #displayQA2
+      {
+            font-size: larger;
+
+      }
 
       .togglepart
       {
@@ -33,10 +49,8 @@ body
             margin-left: 10%;
             box-shadow: 5px 10px #E0144C;
             padding: 5%;
-          #btnsub
-          {
-            margin-top: 2px;
-          }
+            
+
             #thequizz
             {
                   justify-content: center;
@@ -48,24 +62,24 @@ body
                         font-size: 35px;
                         .justquestions
                         {
+                              justify-items: right;
                               .ques
                               {
-                                  
                                     width: 20px;
                                     height: 20px;
                               }
-
                         }
                   }
-                  
             }
-            #quest
-            {
-                  
-            }
-
+         
             #result
             {
+                  progress
+                  {
+                        width: 50%;
+                        height: 60px;
+
+                  }
 
                   .answer
                   {
@@ -113,6 +127,14 @@ body
           color: #E0144C;
           font-family: Marvel
       }
+      div
+      {
+            &:hover
+            {
+             transition: 1s;
+             box-shadow: 10px 10px 10px #fb6938;
+            }  
+      }
 }
 nav
 {
@@ -120,12 +142,11 @@ ul{
       display: flex;
       justify-content: space-between;
             
-           
+      
 
       li
       {
             a{
-
                   margin-top: 25px;
                   text-decoration: none;
                   color:#FF97C1;
@@ -133,6 +154,7 @@ ul{
                   font-weight: 200;
              }
       }
+    
       button
              {
                   border-radius: 20px;
@@ -140,15 +162,19 @@ ul{
                   width: 20%;
                   border-color:#FF5858 ;
                   background-color: #FF5858;
+                  color: #FF5858;
                   font-size: 20px;
                   font-weight: 700;
                   text-transform: uppercase;
                   margin-top: 15px;
              }
 
+         
             list-style: none;
      
 }
+
+
 
 }
 .blink_me {
@@ -182,24 +208,104 @@ ul{
     @include for-phone-only
 {
   
+    
       body
       {
+        
+            text-align: center;
+          
+
+           
+
+            
+            overflow: auto;
+            .container
+            {
+                  #divform
+                  {
+              
+                  color: black;
+                  }
+                  
+                 text-align: center;
+                 #svgdis
+                 {
+                  margin-left: 30px;
+                  height: 220px;
+                  }
+                
+
+              
+                  ol{
+                  display: flex;
+                  justify-items: center;
+                  justify-content: center;
+                  text-align: center;
+                  margin-top: 15px;
+                  .spacediv1
+                  {
+                        margin-top: 30px;
+                        text-align: center;
+                        width: 40px;
+                        color: black;
+                  
+                  }
+                  .spacediv2
+                  {
+                        margin-top: 30px;
+                        width: 40px;
+                        color: black;
+                  }
+                  font-size: small;
+                  font-weight: 400;
+                  
+         
+           }
+                 div
+                 {
+                       height: auto;
+                       width: fit-content;
+                       
+                       #title
+                       {
+                        
+                        font-size: 40px;
+                        color: #E0144C;
+                        
+
+                       }
+                       
+     
+                 }
+            
+            }
+          
             nav{
+                  width: fit-content;
+                  margin-left: 25px;
+                  text-align: center;
+                  width: 100%;
+                  display: flex;
+            
+
                   ul{
-                        display: block;
-                        font-size: smaller;
-                        button
+                        a
                         {
-                              
-                              border-radius: 60px;
-                              width: 200px;
-                              height: 100px;
-                              box-shadow: #FF5858 ;
-                              border-width: 2px;
-                              border-color:#E0144C;
-                              margin: 30px;
+                           
+                        }
+                      
+                       
+                        width: 80%;
+                        display: block;
+                    
+                        #btn-test
+                        {
+                           width: 200px;
+                           height: 50px;
+
 
                         }
+                       
                   }
                   }
       background-color:#FF5858;
@@ -258,6 +364,7 @@ ul{
                   height: 2px;
                   width: 30rem;
                   flex-grow: 4;
+                
             }
       }
       .title-compo

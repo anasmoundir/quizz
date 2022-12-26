@@ -16,6 +16,15 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.container #btn-test:hover {
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-box-shadow: 10px 10px 0 #efbb2a;
+          box-shadow: 10px 10px 0 #efbb2a;
+}
+.container #displayQA2 {
+  font-size: larger;
+}
 .container .togglepart {
   text-align: center;
   height: 400px;
@@ -25,9 +34,6 @@ body {
   -webkit-box-shadow: 5px 10px #E0144C;
           box-shadow: 5px 10px #E0144C;
   padding: 5%;
-}
-.container .togglepart #btnsub {
-  margin-top: 2px;
 }
 .container .togglepart #thequizz {
   -webkit-box-pack: center;
@@ -42,9 +48,16 @@ body {
 .container .togglepart #thequizz .question {
   font-size: 35px;
 }
+.container .togglepart #thequizz .question .justquestions {
+  justify-items: right;
+}
 .container .togglepart #thequizz .question .justquestions .ques {
   width: 20px;
   height: 20px;
+}
+.container .togglepart #result progress {
+  width: 50%;
+  height: 60px;
 }
 .container .togglepart #result .answer {
   border-color: black;
@@ -78,6 +91,12 @@ body {
   color: #E0144C;
   font-family: Marvel;
 }
+.container div:hover {
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-box-shadow: 10px 10px 10px #fb6938;
+          box-shadow: 10px 10px 10px #fb6938;
+}
 
 nav ul {
   display: -webkit-box;
@@ -102,6 +121,7 @@ nav ul button {
   width: 20%;
   border-color: #FF5858;
   background-color: #FF5858;
+  color: #FF5858;
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
@@ -135,23 +155,74 @@ nav ul button {
 }
 @media (max-width: 599px) {
   body {
+    text-align: center;
+    overflow: auto;
     background-color: #FF5858;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
   }
-  body nav ul {
-    display: block;
-    font-size: smaller;
+  body .container {
+    text-align: center;
   }
-  body nav ul button {
-    border-radius: 60px;
+  body .container #divform {
+    color: black;
+  }
+  body .container #svgdis {
+    margin-left: 30px;
+    height: 220px;
+  }
+  body .container ol {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+    font-size: small;
+    font-weight: 400;
+  }
+  body .container ol .spacediv1 {
+    margin-top: 30px;
+    text-align: center;
+    width: 40px;
+    color: black;
+  }
+  body .container ol .spacediv2 {
+    margin-top: 30px;
+    width: 40px;
+    color: black;
+  }
+  body .container div {
+    height: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  body .container div #title {
+    font-size: 40px;
+    color: #E0144C;
+  }
+  body nav {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 25px;
+    text-align: center;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body nav ul {
+    width: 80%;
+    display: block;
+  }
+  body nav ul #btn-test {
     width: 200px;
-    height: 100px;
-    -webkit-box-shadow: #FF5858;
-            box-shadow: #FF5858;
-    border-width: 2px;
-    border-color: #E0144C;
-    margin: 30px;
+    height: 50px;
   }
 }
 @media (max-width: 600px) {

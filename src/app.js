@@ -165,11 +165,8 @@ function passTheNextquestion()
   arr.push(p);
   if(rna1.done)
   {
-    
-    document.getElementById('spacediv3').style.backgroundColor = 'green'
-   
-   
-    if(arr[11])
+    document.getElementById('spacediv3').style.backgroundColor = 'orange'
+    if(arr2[9])
     {
       getresult();
       document.getElementById('displayQA').style.display ="none"; 
@@ -177,6 +174,7 @@ function passTheNextquestion()
       document.getElementById('resultat').innerHTML ="YOUR CORRECT ANSWERS ARE"+ " " +counter +"/10";
     }
   }
+
   fullthedata(rna1.value)
   arr2.push(questions[rna1.value].correctAnswer);
   console.log(answerquestion4.textContent);
@@ -247,24 +245,23 @@ function turn1(){
 
 if(document.getElementById('username').value)
 {
-step.style.backgroundColor ='green',
+step.style.backgroundColor ='orange',
 document.getElementById('title').textContent = "Welcome" + "  " + document.getElementById('username').value;
 document.getElementById('username').style.display = "none";
 document.getElementById('username').value = "";
 document.getElementById('btn').innerHTML = " proceed to the next step"
 document.getElementById('svgdis').style.display = "none";
 document.getElementById('displayQA2').style.display = "block"
-}else if(step.style.backgroundColor =='green')
+}else if(step.style.backgroundColor =='orange')
 {
-
-      step2.style.backgroundColor = 'green';
+      step2.style.backgroundColor = 'orange';
       document.getElementById('btn').style.display = "none";
       document.getElementById('displayQA2').style.display = "none"
       document.getElementById('displayQA').style.display ="block"; 
       passTheNextquestion();
     
 }
-else if( document.getElementById('btn').style.display == "none" && step2.style.backgroundColor == 'green')
+else if( document.getElementById('btn').style.display == "none" && step2.style.backgroundColor == 'yellow')
 {
       alert('happy to see you ')
       

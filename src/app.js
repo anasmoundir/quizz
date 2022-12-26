@@ -156,48 +156,61 @@ var position = 0;
 var correctquestion = 0;
 var arr = [];
 var arr2 = [];
+
 function passTheNextquestion()
 {
   initilizethe();
   let rna1 = ran.next();
+  let p = thevalueofcheckedboxs();
+  arr.push(p);
   if(rna1.done)
   {
-     document.getElementById('displayQA').style.display ="none"; 
+    
     document.getElementById('spacediv3').style.backgroundColor = 'green'
-    document.getElementById('displayQA3').style.display = "block"
-    var resultat = document.getElementById('result').innerHTML ="YOUR CORRECT ANSWERS ARE"+ " " +correctquestion +"/10";
+   
+   
+    if(arr[11])
+    {
+      getresult();
+      document.getElementById('displayQA').style.display ="none"; 
+      document.getElementById('displayQA3').style.display = "block";
+      document.getElementById('resultat').innerHTML ="YOUR CORRECT ANSWERS ARE"+ " " +counter +"/10";
+    }
   }
-  questiontitle.textContent = questions[rna1.value].question;
-  answerquestion1.textContent = questions[rna1.value].answers[0]
-  answerquestion2.textContent = questions[rna1.value].answers[1]
-  answerquestion3.textContent = questions[rna1.value].answers[2]
-  answerquestion4.textContent = questions[rna1.value].answers[3]
-  valuecheck1.value = questions[rna1.value].answers[0];
-  valuecheck2.value = questions[rna1.value].answers[1];
-  valuecheck3.value = questions[rna1.value].answers[2];
-  valuecheck4.value = questions[rna1.value].answers[3];
-  let p = thevalueofcheckedboxs();
-  arr.push(p)
+  fullthedata(rna1.value)
   arr2.push(questions[rna1.value].correctAnswer);
+  console.log(answerquestion4.textContent);
   position = rna1.value;
   console.log(arr)
   console.log(arr2)
 }
+  function fullthedata(nah)
+  {
+    questiontitle.textContent = questions[nah].question;
+    answerquestion1.textContent = questions[nah].answers[0]
+    answerquestion2.textContent = questions[nah].answers[1]
+    answerquestion3.textContent = questions[nah].answers[2]
+    answerquestion4.textContent = questions[nah].answers[3]
+    valuecheck1.value = questions[nah].answers[0];
+    valuecheck2.value = questions[nah].answers[1];
+    valuecheck3.value = questions[nah].answers[2];
+    valuecheck4.value = questions[nah].answers[3];
+  }
+
+
  var counter = 0;
 
   function getresult()
   {
       let i = 0;
-    while(i<arr.length)
+    while(i<arr.length +1)
     {
-      if(arr[i] == arr2[i])
+      if(arr[i + 1] == arr2[i])
       {
         counter += 1;
       }
-      i++;
+      i++;  
     }
-    console.log(counter)
-    console.log(arr)
   }
 
 
@@ -248,6 +261,7 @@ document.getElementById('displayQA2').style.display = "block"
       document.getElementById('btn').style.display = "none";
       document.getElementById('displayQA2').style.display = "none"
       document.getElementById('displayQA').style.display ="block"; 
+      passTheNextquestion();
     
 }
 else if( document.getElementById('btn').style.display == "none" && step2.style.backgroundColor == 'green')

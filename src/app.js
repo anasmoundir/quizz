@@ -111,6 +111,9 @@ var questions =  [
         }
     ]
 const step= document.querySelector('.title-compo');
+
+
+
 const step2= document.getElementById('spacediv2');
 let  button = document.getElementById('btn');
 let buttondata = document.getElementById('btn-test');
@@ -126,6 +129,8 @@ valuecheck1 = document.getElementById('cb11');
  valuecheck2 = document.getElementById('cb21') 
  valuecheck3 = document.getElementById('cb31');
  valuecheck4 = document.getElementById('cb41');
+ progressebar =document.getElementById('progressbar');
+ correction = document.getElementById('correction')
 var  correct = 0;
 function reload()
 {
@@ -171,14 +176,27 @@ function passTheNextquestion()
       getresult();
       document.getElementById('displayQA').style.display ="none"; 
       document.getElementById('displayQA3').style.display = "block";
-      document.getElementById('resultat').innerHTML ="YOUR CORRECT ANSWERS ARE"+ " " +counter +"/10";
+      document.getElementById('resultat').innerHTML ="YOUR CORRECT ANSWERS ARE"+ " " +counter +"/10" ;
+      for(let i=0; i<arr.length;i++)
+      { 
+
+        correction.innerHTML += `<div class="accually">${arr[i+1]}</div>`
+        correction.getElementById('resultat').innerHTML += `<div class ="correct">${arr2[i]}</div>`
+      }
+  
+     
+  
+      
     }
+    console.log(arr)
+    console.log(arr2)
   }
 
   fullthedata(rna1.value)
   arr2.push(questions[rna1.value].correctAnswer);
   console.log(answerquestion4.textContent);
   position = rna1.value;
+  progressebar.value = arr.length*10;
   console.log(arr)
   console.log(arr2)
 }
@@ -194,6 +212,19 @@ function passTheNextquestion()
     valuecheck3.value = questions[nah].answers[2];
     valuecheck4.value = questions[nah].answers[3];
   }
+
+  
+    function createresult()
+    {
+      let i =0;
+      while( i <arr )
+      {
+        document.getElementById('displayQA3').innerHTML +=  '<div>hello world</div>'
+      }
+     
+
+    }
+
 
 
  var counter = 0;
@@ -239,8 +270,6 @@ function StepForward(lol)
 }
   
 
-
-
 function turn1(){
 
 if(document.getElementById('username').value)
@@ -271,81 +300,6 @@ else if( document.getElementById('btn').style.display == "none" && step2.style.b
 }
 function start(){}
 
-
-
-// var arr = [];
-// var DATA;
-// fetch('../public/question.json')
-// .then((data) => data.json())
-
-// .then((data) => { 
- 
-// for(let i = 0;i<data.questions.length;i++){
-//       arr.push(data.question[i]);
-// }
-// })
-
-// async function  quiz(){
-//   let result=await fetch('../public/question.json')
-//   let data= await result.json();
-  
-//    //console.log(data)
-   
-//    return arrayOfValues.questions[0].question
-// }
-
-// let fuck=quiz().then((data) => {return data})
-
-
-
-
-
-
-// console.log(questions[1])
-
-
-
-
-
-
-
-
-
-// console.log(DATA);
-
-
-// console.log(obj);
-//  var obj = fetch('../public/question.json').then(response=>response.json()).then(res => { return res.questions;})
-//  const myvalue = () =>{obj.then((a) =>{console.log(a)})
-// }
-//  myvalue();
-
-
-
-
-
-//methode 2 
-// async function questions(){
-//     const ques = await fetch('../public/question.json')
-//      if(ques.ok){
-//       const data = await ques.json().then((data)=>data)
-//       var arrayOfValues = await Promise.all(data);
-//       console.log(arrayOfValues)
-//       return data.questions;
-//      }
-//      throw new Error("Impossible de recuperer les donnees. Merci de verfiier l'url / fichier JSon")   
-// }
-
-
-
-
-// let variable = questions();
-
-
-// variable.then((q) => {for(let i = 0; variable.length;i++)
-// {
-// arr.push(q[i]);
-// }}
-// ) 
-
-// console.log(arr)
+const spices =[{name :"anas4",nickname :"moundir4"},{name : "anas3",nickname :"moundir3"},{name : "anas2",nickname :"moundir2"},{name : "anas1",nickname :"moundir1"}]
+const nickname = spices.map( s=>s.nickname +"spices")
+console.log(nickname);

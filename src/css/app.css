@@ -16,6 +16,30 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.container #displayQA #result progress {
+  border: 0;
+  height: 40px;
+  border-radius: 20px;
+  color: #00ebc7 !important;
+}
+.container #displayQA #result progress::-webkit-progress-bar {
+  border: 0;
+  height: 40px;
+  border-radius: 20px;
+  color: #00ebc7 !important;
+}
+.container #displayQA #result progress::-webkit-progress-value {
+  border: 0;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #00ebc7 !important;
+}
+.container #displayQA #result progress::-moz-progress-bar {
+  border: 0;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #00ebc7 !important;
+}
 .container #btn-test:hover {
   -webkit-transition: 1s;
   transition: 1s;
@@ -112,12 +136,6 @@ body {
   color: #E0144C;
   font-family: Marvel;
 }
-.container div:hover {
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-box-shadow: 10px 10px 10px #fb6938;
-          box-shadow: 10px 10px 10px #fb6938;
-}
 
 nav ul {
   display: -webkit-box;
@@ -199,7 +217,7 @@ nav ul button {
   }
   body .container #displayQA {
     margin-top: 20px;
-    height: 600px;
+    min-height: 600px;
   }
   body .container #displayQA #thequizz .question .justquestions .ques {
     font-size: 20px;

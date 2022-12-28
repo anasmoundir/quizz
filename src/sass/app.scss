@@ -16,10 +16,19 @@ body
 }
 .container
 {    
+    
       
       
       #displayQA
       {
+
+            #btnsub
+            {
+                  text-align: center;
+                  width:200px;
+                  margin-left: 500px;
+            }
+
             #result
             {
                   progress {
@@ -83,7 +92,6 @@ body
                         {
                               .justquestions
                               {
-
                                     font-weight: 400;
                                     background-color: red;
                               }

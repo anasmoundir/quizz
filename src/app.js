@@ -110,6 +110,28 @@ var questions =  [
           "the explication":"The AWS Acceptable Use Policy provides information regarding prohibited actions on the AWS infrastructure."
         }
     ]
+
+
+
+
+
+
+function displaywhen(){
+  document.getElementById('btnsub').style.display ="none";
+  document.querySelectorAll('.ques').forEach((item)=>{
+     item.addEventListener('change',function(){
+      document.getElementById('btnsub').style.display ="block";
+    })
+  })
+
+}
+
+
+
+
+
+
+
 const step= document.querySelector('.title-compo');
 
 
@@ -132,6 +154,7 @@ valuecheck1 = document.getElementById('cb11');
  progressebar =document.getElementById('progressbar');
  correction = document.getElementById('correction');
 var  correct = 0;
+
 function reload()
 {
       window.location.reload();
@@ -164,9 +187,10 @@ var arr2 = [];
 
 function passTheNextquestion()
 {
+  displaywhen();
   initilizethe();
   let rna1 = ran.next();
-  let p = thevalueofcheckedboxs();
+  p = thevalueofcheckedboxs();
   arr.push(p);
   if(rna1.done)
   {
@@ -179,13 +203,14 @@ function passTheNextquestion()
       document.getElementById('resultat').innerHTML ="YOUR CORRECT ANSWERS ARE"+ " " +counter +"/10" ;
       for(let i=0; i<arr.length-1;i++)
       {
+        if(typeof arr[i] == "undefined")
+        {
+          arr[i] = "this is not a correct answer";
+        }
        document.getElementById('accually').innerHTML +=  i +" "+ `<p>${arr[i+1]}</p>`;
        document.getElementById('correct').innerHTML += i + " "+`<p>${arr2[i]}</p>`; 
        
       }
-
-     
-  
     }
     console.log(arr)
     console.log(arr2)
@@ -220,8 +245,6 @@ function passTheNextquestion()
       {
         document.getElementById('displayQA3').innerHTML +=  '<div>hello world</div>'
       }
-     
-
     }
 
 

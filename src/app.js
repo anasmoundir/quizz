@@ -130,7 +130,7 @@ valuecheck1 = document.getElementById('cb11');
  valuecheck3 = document.getElementById('cb31');
  valuecheck4 = document.getElementById('cb41');
  progressebar =document.getElementById('progressbar');
- correction = document.getElementById('correction')
+ correction = document.getElementById('correction');
 var  correct = 0;
 function reload()
 {
@@ -177,15 +177,15 @@ function passTheNextquestion()
       document.getElementById('displayQA').style.display ="none"; 
       document.getElementById('displayQA3').style.display = "block";
       document.getElementById('resultat').innerHTML ="YOUR CORRECT ANSWERS ARE"+ " " +counter +"/10" ;
-      for(let i=0; i<arr.length;i++)
+      for(let i=0; i<arr.length-1;i++)
       {
-        correction.innerHTML += `<div class="accually">${arr[i+1]}</div>`
-        correction.getElementById('resultat').innerHTML += `<div class ="correct">${arr2[i]}</div>`
+       document.getElementById('accually').innerHTML +=  i +" "+ `<p>${arr[i+1]}</p>`;
+       document.getElementById('correct').innerHTML += i + " "+`<p>${arr2[i]}</p>`; 
+       
       }
-  
+
      
   
-      
     }
     console.log(arr)
     console.log(arr2)
@@ -233,6 +233,7 @@ function passTheNextquestion()
       let i = 0;
     while(i<arr.length +1)
     {
+     
       if(arr[i + 1] == arr2[i])
       {
         counter += 1;
@@ -298,7 +299,3 @@ else if( document.getElementById('btn').style.display == "none" && step2.style.b
       }
 }
 function start(){}
-
-const spices =[{name :"anas4",nickname :"moundir4"},{name : "anas3",nickname :"moundir3"},{name : "anas2",nickname :"moundir2"},{name : "anas1",nickname :"moundir1"}]
-const nickname = spices.map( s=>s.nickname +"spices")
-console.log(nickname);
